@@ -1,0 +1,29 @@
+.back-img {
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+    width: 80%;
+    background-image: url('/assets/sheep.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.content {
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 20px;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 0 0 25px 25px;
+}
+
+a {
+    color: crimson;
+    text-decoration-line: underline;
+}
+
+.row {
+    margin: 10px 0;
+}

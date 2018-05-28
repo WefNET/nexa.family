@@ -1,0 +1,31 @@
+.back-img {
+    -webkit-filter: blur(5px) hue-rotate(0deg);
+    /* Safari */
+    filter: blur(5px) hue-rotate(0deg);
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+}
+
+.content {
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 20px;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 25px 25px;
+}
+
+a {
+    color: crimson;
+    text-decoration-line: underline;
+}
+
+.row {
+    margin: 10px 0;
+}
