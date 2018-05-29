@@ -1,45 +1,43 @@
 <div class="container-fluid back-img">
-  <div class="content">
-    <h1>Olaf's Recipe Guide</h1>
+    <div class="content">
+        <h1>Olaf's Recipe Guide</h1>
 
-    <p-tabView> 
-      <p-tabPanel header="Ingredients">
-        <p-accordion>
-            <p-accordionTab header="Applesauce" >
-                <p-card title="Applesauce" styleClass="ui-card-shadow">
-                    <dl>
-                        <dt>Difficulty:</dt>
-                        <dd>5</dd>
-                        <dt>Oven Type:</dt>
-                        <dd>Oven</dd>
-                        <dt>Container:</dt>
-                        <dd>Cauldron</dd>
-                        <dt>Ingredients:</dt>
-                        <dd>
-                            <ul>
-                                <li>2 x Apples</li>
-                                <li>Ground ginger or nutmeg</li>
-                                <li>Sugar</li>
-                                <li>Water</li>
-                            </ul>
-                        </dd>
-                      </dl>
-                </p-card>
-            </p-accordionTab>
-            <p-accordionTab header="Godfather II">
-                Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
-            </p-accordionTab>
-            <p-accordionTab header="Godfather III">
-                After a break of more than  15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
-            </p-accordionTab>
-        </p-accordion>
-      </p-tabPanel>
-      <p-tabPanel header="Lamb Foods">
-          Content 2
-      </p-tabPanel>
-      <p-tabPanel header="Horse Foods">
-          Content 3    
-      </p-tabPanel>
-  </p-tabView>
-  </div>
+        <p-tabView>
+            <p-tabPanel header="Main Meals">
+                <p-accordion [multiple]="true">
+                    <p-accordionTab *ngFor="let r of masterRecipes" [header]="r.Name">
+                        <p-card [title]="r.Name" styleClass="ui-card-shadow">
+                            <dl>
+                                <dt>Date Added:
+                                    <dt>
+                                        <dd>{{r.Date}}</dd>
+                                        <dt>Difficulty:</dt>
+                                        <dd>{{r.Difficulty}}</dd>
+                                        <dt>Oven Type:</dt>
+                                        <dd>{{r.OvenType}}</dd>
+                                        <dt>Container:</dt>
+                                        <dd>{{r.Container}}</dd>
+                                        <dt>Tool:</dt>
+                                        <dd>{{r.Tool}}</dd>
+                                        <dt>Mandatory Ingredients:</dt>
+                                        <dd>
+                                            {{r.MandatoryIngredients}}
+                                        </dd>
+                                        <dt>Optional Ingredients:</dt>
+                                        <dd>
+                                            {{r.OptionalIngredients}}
+                                        </dd>
+                            </dl>
+                        </p-card>
+                    </p-accordionTab>
+                </p-accordion>
+            </p-tabPanel>
+            <p-tabPanel header="Lamb Foods">
+                Content 2
+            </p-tabPanel>
+            <p-tabPanel header="Horse Foods">
+                Content 3
+            </p-tabPanel>
+        </p-tabView>
+    </div>
 </div>

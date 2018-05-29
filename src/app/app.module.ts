@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, RouterLink } from '@angular/router'
@@ -14,6 +15,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { AccordionModule } from 'primeng/accordion';
 import { CardModule } from 'primeng/card';
 
+import { NexaDataService } from './services/nexa-data.service';
 
 const routes: Routes = [
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
@@ -35,13 +37,16 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     TabViewModule,
     AccordionModule,
     CardModule
   ],
-  providers: [],
+  providers: [
+    NexaDataService
+  ],
   bootstrap: [
     AppComponent
   ]
