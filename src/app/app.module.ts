@@ -14,6 +14,9 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { TabViewModule } from 'primeng/tabview';
 import { AccordionModule } from 'primeng/accordion';
 import { CardModule } from 'primeng/card';
+import { FieldsetModule } from 'primeng/fieldset';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BlockUIModule } from 'primeng/blockui';
 
 import { NexaDataService } from './services/nexa-data.service';
 
@@ -42,7 +45,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     TabViewModule,
     AccordionModule,
-    CardModule
+    CardModule,
+    FieldsetModule,
+    ProgressSpinnerModule,
+    BlockUIModule
   ],
   providers: [
     NexaDataService

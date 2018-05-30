@@ -1,6 +1,6 @@
 .back-img {
     width: 100%;
-    min-height: 500px;
+    min-height: 800px;
     height: 100%;
     width: 80%;
     background-image: url('/assets/sheep.jpg');
@@ -26,4 +26,16 @@ a {
 
 .row {
     margin: 10px 0;
+}
+
+::ng-deep .fa-caret-right::before {
+    content: "\F067";
+}
+
+::ng-deep .fa-caret-down::before {
+    content: "\F068";
+}
+
+::ng-deep .ui-accordion-content {
+    padding-top: 0 !important;
 }

@@ -1,43 +1,269 @@
 <div class="container-fluid back-img">
     <div class="content">
         <h1>Olaf's Recipe Guide</h1>
-
-        <p-tabView>
+        <p-blockUI [blocked]="blockedDocument">
+            <i class="fa fa-lock fa-5x" style="position:absolute;top:40%;left:50%"></i>
+        </p-blockUI>
+        <p-tabView (onChange)="handleTabChange($event)">
             <p-tabPanel header="Main Meals">
                 <p-accordion [multiple]="true">
-                    <p-accordionTab *ngFor="let r of masterRecipes" [header]="r.Name">
-                        <p-card [title]="r.Name" styleClass="ui-card-shadow">
-                            <dl>
-                                <dt>Date Added:
-                                    <dt>
-                                        <dd>{{r.Date}}</dd>
+                    <p-accordionTab *ngFor="let r of mainmealRecipes" [header]="r.Name" class="recipe-header">
+                        <p-card styleClass="ui-card-shadow">
+                            <div class="ui-g">
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.Date">Date Added:</dt>
+                                        <dd *ngIf="r.Date">{{r.Date}}</dd>
                                         <dt>Difficulty:</dt>
                                         <dd>{{r.Difficulty}}</dd>
-                                        <dt>Oven Type:</dt>
-                                        <dd>{{r.OvenType}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.OvenType != '-'">Oven Type:</dt>
+                                        <dd *ngIf="r.OvenType != '-'">{{r.OvenType}}</dd>
                                         <dt>Container:</dt>
                                         <dd>{{r.Container}}</dd>
-                                        <dt>Tool:</dt>
-                                        <dd>{{r.Tool}}</dd>
+                                        <dt *ngIf="r.Tool != '-'">Tool:</dt>
+                                        <dd *ngIf="r.Tool != '-'">{{r.Tool}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="ui-g-4">
+                                    <dl>
                                         <dt>Mandatory Ingredients:</dt>
                                         <dd>
                                             {{r.MandatoryIngredients}}
                                         </dd>
-                                        <dt>Optional Ingredients:</dt>
-                                        <dd>
+                                        <dt *ngIf="r.OptionalIngredients != '-'">Optional Ingredients:</dt>
+                                        <dd *ngIf="r.OptionalIngredients != '-'">
                                             {{r.OptionalIngredients}}
                                         </dd>
-                            </dl>
+                                    </dl>
+                                </div>
+                            </div>
                         </p-card>
                     </p-accordionTab>
                 </p-accordion>
             </p-tabPanel>
-            <p-tabPanel header="Lamb Foods">
-                Content 2
+
+            <p-tabPanel header="Desserts">
+                <p-accordion [multiple]="true">
+                    <p-accordionTab *ngFor="let r of dessertRecipes" [header]="r.Name" class="recipe-header">
+                        <p-card styleClass="ui-card-shadow">
+                            <div class="ui-g">
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.Date">Date Added:</dt>
+                                        <dd *ngIf="r.Date">{{r.Date}}</dd>
+                                        <dt>Difficulty:</dt>
+                                        <dd>{{r.Difficulty}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.OvenType != '-'">Oven Type:</dt>
+                                        <dd *ngIf="r.OvenType != '-'">{{r.OvenType}}</dd>
+                                        <dt>Container:</dt>
+                                        <dd>{{r.Container}}</dd>
+                                        <dt *ngIf="r.Tool != '-'">Tool:</dt>
+                                        <dd *ngIf="r.Tool != '-'">{{r.Tool}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt>Mandatory Ingredients:</dt>
+                                        <dd>
+                                            {{r.MandatoryIngredients}}
+                                        </dd>
+                                        <dt *ngIf="r.OptionalIngredients != '-'">Optional Ingredients:</dt>
+                                        <dd *ngIf="r.OptionalIngredients != '-'">
+                                            {{r.OptionalIngredients}}
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </p-card>
+                    </p-accordionTab>
+                </p-accordion>
             </p-tabPanel>
-            <p-tabPanel header="Horse Foods">
-                Content 3
+
+            <p-tabPanel header="Breads">
+                <p-accordion [multiple]="true">
+                    <p-accordionTab *ngFor="let r of breadRecipes" [header]="r.Name" class="recipe-header">
+                        <p-card styleClass="ui-card-shadow">
+                            <div class="ui-g">
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.Date">Date Added:</dt>
+                                        <dd *ngIf="r.Date">{{r.Date}}</dd>
+                                        <dt>Difficulty:</dt>
+                                        <dd>{{r.Difficulty}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.OvenType != '-'">Oven Type:</dt>
+                                        <dd *ngIf="r.OvenType != '-'">{{r.OvenType}}</dd>
+                                        <dt>Container:</dt>
+                                        <dd>{{r.Container}}</dd>
+                                        <dt *ngIf="r.Tool != '-'">Tool:</dt>
+                                        <dd *ngIf="r.Tool != '-'">{{r.Tool}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt>Mandatory Ingredients:</dt>
+                                        <dd>
+                                            {{r.MandatoryIngredients}}
+                                        </dd>
+                                        <dt *ngIf="r.OptionalIngredients != '-'">Optional Ingredients:</dt>
+                                        <dd *ngIf="r.OptionalIngredients != '-'">
+                                            {{r.OptionalIngredients}}
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </p-card>
+                    </p-accordionTab>
+                </p-accordion>
             </p-tabPanel>
+
+            <p-tabPanel header="Snacks">
+                <p-accordion [multiple]="true">
+                    <p-accordionTab *ngFor="let r of snackRecipes" [header]="r.Name" class="recipe-header">
+                        <p-card styleClass="ui-card-shadow">
+                            <div class="ui-g">
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.Date">Date Added:</dt>
+                                        <dd *ngIf="r.Date">{{r.Date}}</dd>
+                                        <dt>Difficulty:</dt>
+                                        <dd>{{r.Difficulty}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.OvenType != '-'">Oven Type:</dt>
+                                        <dd *ngIf="r.OvenType != '-'">{{r.OvenType}}</dd>
+                                        <dt>Container:</dt>
+                                        <dd>{{r.Container}}</dd>
+                                        <dt *ngIf="r.Tool != '-'">Tool:</dt>
+                                        <dd *ngIf="r.Tool != '-'">{{r.Tool}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt>Mandatory Ingredients:</dt>
+                                        <dd>
+                                            {{r.MandatoryIngredients}}
+                                        </dd>
+                                        <dt *ngIf="r.OptionalIngredients != '-'">Optional Ingredients:</dt>
+                                        <dd *ngIf="r.OptionalIngredients != '-'">
+                                            {{r.OptionalIngredients}}
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </p-card>
+                    </p-accordionTab>
+                </p-accordion>
+            </p-tabPanel>
+
+            <p-tabPanel header="Ingredients">
+                <p-accordion [multiple]="true">
+                    <p-accordionTab *ngFor="let r of ingRecipes" [header]="r.Name" class="recipe-header">
+                        <p-card styleClass="ui-card-shadow">
+                            <div class="ui-g">
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.Date">Date Added:</dt>
+                                        <dd *ngIf="r.Date">{{r.Date}}</dd>
+                                        <dt>Difficulty:</dt>
+                                        <dd>{{r.Difficulty}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.OvenType != '-'">Oven Type:</dt>
+                                        <dd *ngIf="r.OvenType != '-'">{{r.OvenType}}</dd>
+                                        <dt>Container:</dt>
+                                        <dd>{{r.Container}}</dd>
+                                        <dt *ngIf="r.Tool != '-'">Tool:</dt>
+                                        <dd *ngIf="r.Tool != '-'">{{r.Tool}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt>Mandatory Ingredients:</dt>
+                                        <dd>
+                                            {{r.MandatoryIngredients}}
+                                        </dd>
+                                        <dt *ngIf="r.OptionalIngredients != '-'">Optional Ingredients:</dt>
+                                        <dd *ngIf="r.OptionalIngredients != '-'">
+                                            {{r.OptionalIngredients}}
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </p-card>
+                    </p-accordionTab>
+                </p-accordion>
+            </p-tabPanel>
+
+            <p-tabPanel header="Beverages">
+                <p-accordion [multiple]="true">
+                    <p-accordionTab *ngFor="let r of beverageRecipes" [header]="r.Name" class="recipe-header">
+                        <p-card styleClass="ui-card-shadow">
+                            <div class="ui-g">
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.Date">Date Added:</dt>
+                                        <dd *ngIf="r.Date">{{r.Date}}</dd>
+                                        <dt>Difficulty:</dt>
+                                        <dd>{{r.Difficulty}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt *ngIf="r.OvenType != '-'">Oven Type:</dt>
+                                        <dd *ngIf="r.OvenType != '-'">{{r.OvenType}}</dd>
+                                        <dt>Container:</dt>
+                                        <dd>{{r.Container}}</dd>
+                                        <dt *ngIf="r.Tool != '-'">Tool:</dt>
+                                        <dd *ngIf="r.Tool != '-'">{{r.Tool}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="ui-g-4">
+                                    <dl>
+                                        <dt>Mandatory Ingredients:</dt>
+                                        <dd>
+                                            {{r.MandatoryIngredients}}
+                                        </dd>
+                                        <dt *ngIf="r.OptionalIngredients != '-'">Optional Ingredients:</dt>
+                                        <dd *ngIf="r.OptionalIngredients != '-'">
+                                            {{r.OptionalIngredients}}
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </p-card>
+                    </p-accordionTab>
+                </p-accordion>
+            </p-tabPanel>
+
+            <p-tabPanel header="About...">
+                <p-card styleClass="ui-card-shadow">
+                    <p>Olaf's Recipe Guide is a set of Wurm Online recipes discovered and catalogued by Olafhairybreeks, co-founder of the NEXA Alliance.</p>
+                    Olaf likes sheep, in a good way, perverts!
+                </p-card>
+            </p-tabPanel>
+
         </p-tabView>
     </div>
 </div>
