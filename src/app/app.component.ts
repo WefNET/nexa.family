@@ -11,7 +11,7 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent {
     title = 'app';
 
-    private items: MenuItem[];
+    items: MenuItem[];
 
     ngOnInit() {
         this.items = [{
