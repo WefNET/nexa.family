@@ -17,12 +17,16 @@ import { CardModule } from 'primeng/card';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BlockUIModule } from 'primeng/blockui';
+import { ToolbarModule } from 'primeng/toolbar';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import {MenuModule} from 'primeng/menu';
 
 import { NexaDataService } from './services/nexa-data.service';
 
 const routes: Routes = [
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'roster', component: RosterComponent },
   { path: 'joinnow', component: RecruitingComponent },
   { path: 'recipes', component: RecipesComponent }
@@ -48,7 +52,10 @@ const routes: Routes = [
     CardModule,
     FieldsetModule,
     ProgressSpinnerModule,
-    BlockUIModule
+    BlockUIModule,
+    ToolbarModule,
+    SplitButtonModule,
+    MenuModule,
   ],
   providers: [
     NexaDataService

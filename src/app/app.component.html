@@ -1,1 +1,3 @@
+<p-menu #menu popup="popup" [model]="items" appendToBody="true"></p-menu>
+<button type="button" pButton icon="fa fa-bars" class="ui-button-secondary" label="Navigate" (click)="menu.toggle($event)" style="position: fixed; right: 25px; z-index: 50;"></button>
 <router-outlet></router-outlet>

@@ -5,87 +5,23 @@
     <div class="row">
       <div class="col-lg-12">
         <table class="table">
-          <!-- <thead>
-              <tr>
-                <th>Toon(s)</th>
-                <th>Rank</th>
-                <th>Forum Profile</th>
-              </tr>
-            </thead> -->
+          <thead>
+            <tr class="table-success">
+              <th>Main</th>
+              <th>Alts</th>
+              <th>Title</th>
+              <th>Status</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr class="table-success">
-              <td>Aniceset</td>
-              <td>Founder</td>
-              <td>*Retired*</td>
-            </tr>
-            <tr class="table-success">
-              <td>Olafhairybreeks, Hillabraidedbeard</td>
-              <td>Founder</td>
-              <td></td>
-            </tr>
-            <tr class="table-info">
-              <td>Mello, Dysstone (Nahjo)</td>
-              <td>Clan Leader</td>
-              <td></td>
-            </tr>
-            <tr class="table-info">
-              <td>Kadmint</td>
-              <td>Clan Leader</td>
-              <td></td>
-            </tr>
-            <tr class="table-info">
-              <td>Jackjones, Jimjameson (Vynora), Meisterbrau</td>
-              <td>Clan Leader</td>
-              <td></td>
-            </tr>
-            <tr class="table-info">
-              <td>Talohan</td>
-              <td>Clan Leader</td>
-              <td></td>
-            </tr>
-            <tr class="table-info">
-              <td>Thesisus</td>
-              <td>Clan Leader</td>
-              <td>*Retired*</td>
-            </tr>
-
-            <tr class="table-light">
-              <td>Aqua</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="table-light">
-              <td>Ascorbic</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="table-light">
-              <td>Aske</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="table-light">
-              <td>Dalethegood, MrChipper</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="table-light">
-              <td>Egbert</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="table-light">
-              <td>Forseti, Drjekyll</td>
-              <td></td>
-              <td></td>
+            <tr class="table-light" *ngFor="let p of players">
+              <td>{{p.Main}}</td>
+              <td>{{p.Alts}}</td>
+              <td>{{p.Title}}</td>
+              <td>{{p.Status}}</td>
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <a routerLink="/">Home</a>
       </div>
     </div>
   </div>
