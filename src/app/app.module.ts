@@ -19,9 +19,11 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BlockUIModule } from 'primeng/blockui';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SplitButtonModule } from 'primeng/splitbutton';
-import {MenuModule} from 'primeng/menu';
+import { MenuModule } from 'primeng/menu';
+import { TableModule } from 'primeng/table';
 
 import { NexaDataService } from './services/nexa-data.service';
+import { AeComponent } from './ae/ae.component';
 
 const routes: Routes = [
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
@@ -29,7 +31,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'roster', component: RosterComponent },
   { path: 'joinnow', component: RecruitingComponent },
-  { path: 'recipes', component: RecipesComponent }
+  { path: 'recipes', component: RecipesComponent },
+  { path: 'ae', component: AeComponent }
 ];
 
 
@@ -41,6 +44,7 @@ const routes: Routes = [
     RecruitingComponent,
     SaleComponent,
     RecipesComponent,
+    AeComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,7 @@ const routes: Routes = [
     ToolbarModule,
     SplitButtonModule,
     MenuModule,
+    TableModule
   ],
   providers: [
     NexaDataService

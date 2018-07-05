@@ -16,6 +16,16 @@ export class NexaDataService {
 
   rosterSpreadsheet = 'https://spreadsheets.google.com/feeds/cells/' + this.rosterId + '/od6/public/values?min-row=2&alt=json'; 
 
+  private v4API = "https://sheets.googleapis.com/v4/spreadsheets";
+    private aeSheetId = "17lVxou_3sP7Ytx4OlmQsaCJwomEwHv-iErCX-JgQuG8";
+    private q1 = "ranges=Citizens!A2:D";
+    private q2 = "ranges=Canals!A2:I";
+    private q3 = "ranges=Bridges!A2:E";
+    private q4 = "ranges=Landmarks!A2:D";
+    private yourMotherSmokesCrack = "AIzaSyDi4nKWGegwmPuesj8GLa3kRaiFw0I-v2g";
+
+    private _v4SheetsAPIAECitizensData: string = `${this.v4API}/${this.aeSheetId}/values:batchGet?${this.q1}&key=${this.yourMotherSmokesCrack}`;
+
   getMainMeals() {
     return this.http.get(this.recipesSpreadsheetBase);
   }
@@ -45,6 +55,10 @@ export class NexaDataService {
 
   getRoster() {
     return this.http.get(this.rosterSpreadsheet);
+  }
+
+  getAECitizens() {
+    return this.http.get(this._v4SheetsAPIAECitizensData);
   }
 }
 

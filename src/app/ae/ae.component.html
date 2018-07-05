@@ -1,0 +1,65 @@
+<div class="content">
+    <h1>Amish Estates</h1>
+    <h3>A communal village near Summerholt</h3>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Founded in 2014, Amish Estates is one of the biggest and best organized villages in the game of Wurm Online.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Amish Estates offers two living options:</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Option 1: Plot of land big enough to build a home with enough extra space for a small farm &amp; animal pens secured
+            by fences.</div>
+        <div class="col-md-4">Option 2: A pre-built guest house to get you started while out looking at land to acquire of your own, includes a
+            small fenced in yard.</div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Amenties:</h4>
+            <ul>
+                <li>Well stocked workshops with large tools and crafting materials to help get you started making your own gear.</li>
+                <li>Kitchens with ingredients, cooking utensils, and ovens to help you make your own food.
+                    <strong>Bonus:</strong> the larder in the kitchen is stocked with high quality foods to help keep your nutrition
+                    up.</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Rules:</h4>
+            <ul>
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p-table [value]="citizens">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Name</th>
+                        <th>Start</th>
+                        <th>Last Seen</th>
+                        <th>Role</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-citizen>
+                    <tr>
+                        <td>{{citizen.Name}}</td>
+                        <td>{{citizen.Started | date:'shortDate'}}</td>
+                        <td>{{citizen.LastSeen | date:'shortDate'}}</td>
+                        <td>{{citizen.Role}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
