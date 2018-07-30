@@ -24,6 +24,7 @@ import { TableModule } from 'primeng/table';
 
 import { NexaDataService } from './services/nexa-data.service';
 import { AeComponent } from './ae/ae.component';
+import { AeMapComponent } from './ae-map/ae-map.component';
 
 const routes: Routes = [
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'roster', component: RosterComponent },
   { path: 'joinnow', component: RecruitingComponent },
   { path: 'recipes', component: RecipesComponent },
-  { path: 'ae', component: AeComponent }
+  { path: 'ae', component: AeComponent },
+  { path: 'ae-map', component: AeMapComponent}  
 ];
 
 
@@ -45,6 +47,7 @@ const routes: Routes = [
     SaleComponent,
     RecipesComponent,
     AeComponent,
+    AeMapComponent,
   ],
   imports: [
     BrowserModule,
