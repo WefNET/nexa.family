@@ -3,3 +3,15 @@
 html {
     background-color: #1E5A52;
 }
+
+.page-header {
+    font-family: 'Poppins', sans-serif;
+}
+
+.map div.ol-mouse-position {
+    top: 55px;
+    right: 58px;
+    position: fixed;
+    color: white;
+    z-index: 10000;
+}

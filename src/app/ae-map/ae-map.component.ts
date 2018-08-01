@@ -86,6 +86,24 @@ export class AeMapComponent implements OnInit {
     });
 
     this.map.getView().fit(mapExtent, this.map.getSize());
+
+    this.map.on('singleclick', function (evt) {
+      console.log("Event", evt);
+
+      var coord = evt["coordinate"];
+      // console.log("Coords", coord)
+
+      // console.log("Map", evt.map);
+
+      let zoom = evt.map.getView().getZoom();
+      // console.log("Zoom", zoom);
+
+      var x = parseInt(coord[0]);
+      var y = parseInt(coord[1]);
+
+      console.log(`[${x}, ${y}]`);
+
+    }.bind(this));
   }
 
 }
