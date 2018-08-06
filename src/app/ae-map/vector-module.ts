@@ -58,7 +58,7 @@ var plots = [
     },
     {
         "Name": "P20",
-        "Assigned": "Dunno",
+        "Assigned": "Ascorbic",
         "Coords": [[122, -967], [228, -967], [228, -1029], [122, -1029]]
     },
     {
@@ -253,22 +253,22 @@ var plots = [
     },
     {
         "Name": "G1",
-        "Assigned": "Dunno",
+        "Assigned": "Rolf",
         "Coords": [[685, -570], [731, -570], [731, -646], [685, -646]]
     },
     {
         "Name": "G2",
-        "Assigned": "Dunno",
+        "Assigned": "Nahjo",
         "Coords": [[624, -570], [670, -570], [670, -646], [624, -646]]
     },
     {
         "Name": "G3",
-        "Assigned": "Dunno",
+        "Assigned": "Gary",
         "Coords": [[563, -570], [610, -570], [610, -646], [563, -646]]
     },
     {
         "Name": "G4",
-        "Assigned": "Dunno",
+        "Assigned": "Pae",
         "Coords": [[487, -585], [548, -585], [548, -646], [487, -646]]
     },
     {
@@ -310,6 +310,21 @@ var plots = [
         "Name": "A3",
         "Assigned": "Chapel",
         "Coords": [[700, -753], [746, -753], [746, -829], [700, -829]]
+    },
+    {
+        "Name": "A4",
+        "Assigned": "Pottery Barn\n(Clay tile)",
+        "Coords": [[929, -614], [989, -614], [989, -691], [929, -691]]
+    },
+    {
+        "Name": "A5",
+        "Assigned": "The Warehouse",
+        "Coords": [[1004, -571], [1127, -571], [1127, -631], [1004, -631]]
+    },
+    {
+        "Name": "A6",
+        "Assigned": "The Workshop",
+        "Coords": [[1020, -646], [1095, -646], [1095, -707], [1020, -707]]
     },
 
 
